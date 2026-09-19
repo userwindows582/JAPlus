@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAPlus (JA+) 公式サイト - 日本語ベースのプログラミング言語</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --text-color: #c9d1d9;
+            --text-muted: #8b949e;
+            --accent-color: #58a6ff;
+            --accent-hover: #1f6feb;
+            --border-color: #30363d;
+            --code-bg: #010409;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem 3rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            background-color: var(--accent-color);
+            color: #ffffff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--border-color);
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto 4rem;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .card h3 {
+            color: var(--accent-color);
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .syntax-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 1.25rem;
+            margin-top: 1rem;
+        }
+
+        .syntax-item {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .syntax-item h3 {
+            color: var(--accent-color);
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* 綺麗な等幅フォントを使いつつ全角括弧で崩れを完全になくす */
+        .code-box {
+            background-color: var(--code-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 0.75rem 1rem;
+            font-family: Consolas, "JetBrains Mono", "Courier New", monospace;
+            font-size: 0.95rem;
+            color: #e6edf3;
+            letter-spacing: 0px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">JAPlus (JA+)</a>
+        <nav>
+            <a href="#features">特徴</a>
+            <a href="#syntax">基本文法</a>
+            <a href="#" id="nav-github-link" target="_blank">GitHub</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>日本語で直感的に書けるプログラミング言語</h1>
+        <p>JAPlus (JA+) は、かぎ括弧や角括弧を使ったシンプルかつ強力な日本語プログラミング言語です。</p>
+        <div class="btn-container">
+            <a href="#" id="download-btn" class="btn">最新版をダウンロード</a>
+            <a href="#" id="github-btn" class="btn btn-secondary" target="_blank">GitHub (<span id="latest-version">main</span>)</a>
+        </div>
+    </div>
+
+    <main>
+        <section id="features">
+            <h2>JA+ の特徴</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>完全な日本語ベース</h3>
+                    <p>「変数」や「出力」といった自然な日本語でプログラムを構築できます。</p>
+                </div>
+                <div class="card">
+                    <h3>多彩な機能</h3>
+                    <p>HTTP通信や外部プロセスの起動、条件分岐、ループ処理などをスマートに実行可能。</p>
+                </div>
+                <div class="card">
+                    <h3>シンプル・軽量</h3>
+                    <p>かぎ括弧や角括弧を使った明快なルールで、直感的に記述できます。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="syntax">
+            <h2>基本文法</h2>
+            <div class="syntax-grid">
+                <div class="syntax-item">
+                    <div>
+                        <h3>変数宣言</h3>
+                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.5rem;">かぎ括弧で変数を指定します。</p>
+                    </div>
+                    <div class="code-box">「変数名」を ［値］ にする</div>
+                </div>
+
+                <div class="syntax-item">
+                    <div>
+                        <h3>出力</h3>
+                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.5rem;">テキストや数値をコンソールに出力します。</p>
+                    </div>
+                    <div class="code-box">［テキスト］ を出力する</div>
+                </div>
+
+                <div class="syntax-item">
+                    <div>
+                        <h3>計算</h3>
+                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.5rem;">コロンで囲んで計算処理を行います。</p>
+                    </div>
+                    <div class="code-box">「変数」を: 50 + 20 :にする</div>
+                </div>
+
+                <div class="syntax-item">
+                    <div>
+                        <h3>条件分岐</h3>
+                        <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 0.5rem;">条件に一致する場合に処理を実行します。</p>
+                    </div>
+                    <div class="code-box">「変数」が ［true］ なら、［処理］ を出力する</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 JAPlus Project. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const GITHUB_OWNER = 'userwindows582';
+        const GITHUB_REPO = 'JAPlus';
+
+        const repoUrl = `https://github.com/${GITHUB_OWNER}/${GITHUB_REPO}`;
+        document.getElementById('nav-github-link').href = repoUrl;
+        document.getElementById('github-btn').href = repoUrl;
+
+        // 404になりにくい /tags エンドポイントから最新のタグを取得
+        fetch(`https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/tags`)
+            .then(res => {
+                if (!res.ok) throw new Error('Tags not found');
+                return res.json();
+            })
+            .then(data => {
+                if (data && data.length > 0) {
+                    const latestTag = data[0].name;
+                    document.getElementById('latest-version').textContent = latestTag;
+                    document.getElementById('download-btn').href = `${repoUrl}/releases/tag/${latestTag}`;
+                }
+            })
+            .catch(() => {
+                document.getElementById('latest-version').textContent = 'main';
+                document.getElementById('download-btn').href = repoUrl;
+            });
+    </script>
+</body>
+</html>
