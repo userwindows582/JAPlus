@@ -13,5 +13,5 @@ JA+は、Pythonをベースとした日本語ベースのプログラミング�
 - 発案: userwindows582
 
 ## ライセンス
-本プロジェクトは [userwindows582's Opensource License](LICENSE) に基づいて公開されています。
+本プロジェクトは [userwindows582's Source-Available License](LICENSE) に基づいて公開されています。
 （※AGPLv3をベースに商用利用制限等の独自条項を追加したものです）
