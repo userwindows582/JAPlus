@@ -5,7 +5,7 @@ JA+は、Pythonをベースとした日本語ベースのプログラミング�
 - 公開してる人: userwindows582
 - 開発: Google Gemini
 - 発案: userwindows582
-- 
+
 ## ライセンス (License)
 
 本ソフトウェアはデュアルライセンスで提供されています。
